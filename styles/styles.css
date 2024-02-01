@@ -1,8 +1,16 @@
+/* ----------------------------- Pseudocode --------------------------------- */
+
 /*
---------------------------- 16 x 16 grid ---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 16 x 16 grid ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     - Can do flex, with the width of each div square being 1/16th of view width
-    - 
+    - Can use the grid-div class to style all the squares
+        - Allow wrapping
+        - Make the shortest viewport direction determine the square dimensions
+        - Make height equal the width
+        - Use gap instead of margins
+        
 
 
 
 */
+
