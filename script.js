@@ -36,5 +36,6 @@ for (let i = 0; i < 16; i++) {
 
 const gridContainer = document.querySelector('#grid-container');
 gridDivsArray.forEach( (div) => {
+    div.classList.toggle('grid-div');
     gridContainer.appendChild(div);
 });
