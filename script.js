@@ -27,3 +27,14 @@
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const gridDivsArray =  [];
+
+for (let i = 0; i < 16; i++) {
+    gridDivsArray[i] = document.createElement('div');
+};
+
+const gridContainer = document.querySelector('#grid-container');
+gridDivsArray.forEach( (div) => {
+    gridContainer.appendChild(div);
+});
