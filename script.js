@@ -28,14 +28,16 @@
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const gridDivsArray =  [];
+(function () {
+    const gridDivsArray =  [];
 
-for (let i = 0; i < 16; i++) {
-    gridDivsArray[i] = document.createElement('div');
-};
+    for (let i = 0; i < 16; i++) {
+        gridDivsArray[i] = document.createElement('div');
+    };
 
-const gridContainer = document.querySelector('#grid-container');
-gridDivsArray.forEach( (div) => {
-    div.classList.toggle('grid-div');
-    gridContainer.appendChild(div);
-});
+    const gridContainer = document.querySelector('#grid-container');
+    gridDivsArray.forEach( (div) => {
+        div.classList.toggle('grid-div');
+        gridContainer.appendChild(div);
+    });
+})();
