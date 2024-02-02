@@ -49,3 +49,13 @@
     });
 })();
 
+
+addEventListener('load', () => {
+    
+    const gridInteraction = document.querySelector('#grid-group');
+
+    gridInteraction.addEventListener('mouseover', (e) => {
+        const targetDiv = e.target;
+        targetDiv.style.backgroundColor = 'orange';
+    });
+});
