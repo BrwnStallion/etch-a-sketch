@@ -1,4 +1,4 @@
-// ---------------------------- Etch-A-Sketch ----------------------------------
+// --------------------------- Etch-A-Sketch -----------------------------------
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Pseudocode ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,7 +35,7 @@
         gridDivsArray[i] = document.createElement('div');
     };
 
-    const gridContainer = document.querySelector('#grid-container');
+    const gridContainer = document.querySelector('#grid-group');
     gridDivsArray.forEach( (div) => {
         div.classList.toggle('grid-div');
         gridContainer.appendChild(div);
