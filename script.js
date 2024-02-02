@@ -28,6 +28,12 @@
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// Generate random number within a range
+function getRandomNumber(min, max) {
+    min = Math.ceil(+min);
+    max = Math.floor(+max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +62,16 @@ addEventListener('load', () => {
 
     gridInteraction.addEventListener('mouseover', (e) => {
         const targetDiv = e.target;
-        targetDiv.style.backgroundColor = 'orange';
+        let minColor = 0;
+        let maxColor = 255;
+
+        let redCode = getRandomNumber(minColor, maxColor);
+        let greenCode = getRandomNumber(minColor, maxColor);
+        let blueCode = getRandomNumber(minColor, maxColor);
+
+        targetDiv.style.backgroundColor = `rgb(${redCode}, ${greenCode},
+            ${blueCode}`;
+
     });
 
     gridInteraction.addEventListener('touchmove', (e) => {
