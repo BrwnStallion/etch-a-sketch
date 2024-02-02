@@ -58,4 +58,9 @@ addEventListener('load', () => {
         const targetDiv = e.target;
         targetDiv.style.backgroundColor = 'orange';
     });
+
+    gridInteraction.addEventListener('touchstart', () => {
+        const targetDiv = e.target;
+        targetDiv.style.backgroundColor = 'orange';
+    });
 });
