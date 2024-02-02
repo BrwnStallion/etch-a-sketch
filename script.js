@@ -23,6 +23,13 @@
         // JS to select a random rgb based off the range of possible values
         // Future objective: darken by 10% with every interaction
 
+// Implement button that allows user to input a custom grid size
+    // Use a prompt popup
+        // Set the maximum to 100
+        // Account for null
+        // Dispatch an event to trigger the grid logic instead of reusing it
+    // Define width and height attribute on '#grid-group .grid-div' to be the
+    // appropriate fraction.
 
 
 
@@ -76,3 +83,4 @@ addEventListener('load', () => {
     gridInteraction.addEventListener('mouseover', makeTargetRandomColor);
     gridInteraction.addEventListener('touchmove', makeTargetRandomColor);
 });
+
