@@ -59,7 +59,7 @@ addEventListener('load', () => {
         targetDiv.style.backgroundColor = 'orange';
     });
 
-    gridInteraction.addEventListener('touchmove', () => {
+    gridInteraction.addEventListener('touchmove', (e) => {
         const targetDiv = e.target;
         targetDiv.style.backgroundColor = 'orange';
     });
