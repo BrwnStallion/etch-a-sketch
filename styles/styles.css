@@ -1,3 +1,6 @@
+/* -------------------------- Etch-A-Sketch CSS ----------------------------- */
+
+
 /* ----------------------------- Pseudocode --------------------------------- */
 
 /*
@@ -51,8 +54,12 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+
+    /* top position of element relative to parent element */
     top: 0;
-    left: 0;
+
+    /* left position of element relative to parent element */
+    left: 0; 
 }
 
 #grid-container .grid-div {
