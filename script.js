@@ -35,6 +35,19 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Make an element a random color
+function makeTargetRandomColor(e) {
+    const targetDiv = e.target;
+    let maxColor = 0;
+    let minColor = 255;
+
+    let redCode = getRandomNumber(minColor, maxColor);
+    let greenCode = getRandomNumber(minColor, maxColor);
+    let blueCode = getRandomNumber(minColor, maxColor);
+
+    targetDiv.style.backgroundColor = `rgb(${redCode}, ${greenCode},
+        ${blueCode}`;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,22 +73,6 @@ addEventListener('load', () => {
     
     const gridInteraction = document.querySelector('#grid-group');
 
-    gridInteraction.addEventListener('mouseover', (e) => {
-        const targetDiv = e.target;
-        let minColor = 0;
-        let maxColor = 255;
-
-        let redCode = getRandomNumber(minColor, maxColor);
-        let greenCode = getRandomNumber(minColor, maxColor);
-        let blueCode = getRandomNumber(minColor, maxColor);
-
-        targetDiv.style.backgroundColor = `rgb(${redCode}, ${greenCode},
-            ${blueCode}`;
-
-    });
-
-    gridInteraction.addEventListener('touchmove', (e) => {
-        const targetDiv = e.target;
-        targetDiv.style.backgroundColor = 'orange';
-    });
+    gridInteraction.addEventListener('mouseover', makeTargetRandomColor);
+    gridInteraction.addEventListener('touchmove', makeTargetRandomColor);
 });
