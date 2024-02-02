@@ -42,8 +42,9 @@ body {
 body,
 #header,
 #title,
-#header button {
-    touch-action: manipulation;
+#header button,
+#grid-container .grid-div {
+    touch-action: none;
 }
 
 #header {
