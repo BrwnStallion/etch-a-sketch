@@ -15,6 +15,13 @@
         // over the same variable as we append. This method allows for one array
         // to be defined, and then we can append all of its members
     // Can also add the class attribute by toggling the attribute for each/all
+    
+// Apply 'hover' effect to the grid divs
+    // When the mouse moves onto a square (can put the listener on the parent)
+        // Can apply attributes/styles to target element
+    // Color of the interacted square randomizes
+        // JS to select a random rgb based off the range of possible values
+        // Future objective: darken by 10% with every interaction
 
 
 
