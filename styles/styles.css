@@ -87,7 +87,6 @@ body,
 }
 
 #grid-group .grid-div {
-    border: 1px solid red;
     width: 6.25%;
     height: 6.25%;
     background-color: rgb(85, 85, 85);
