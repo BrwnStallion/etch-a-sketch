@@ -71,7 +71,7 @@ body,
     border-radius: 0px;
     font-size: 14px;
     padding: 3px 12px;
-    background-color: orange;
+    background-color: rgb(65, 162, 201);
 }
 
 #grid-container {
