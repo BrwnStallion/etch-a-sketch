@@ -37,6 +37,12 @@ body {
     display: flex;
     flex-direction: column;
     background-color: black;
+}
+
+body,
+#header,
+#title,
+#header button {
     touch-action: manipulation;
 }
 
