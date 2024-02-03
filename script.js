@@ -56,6 +56,7 @@ function makeTargetRandomColor(e) {
         ${blueCode}`;
 }
 
+// Make and append grid divs
 function makeGridDiv(size) {
     const gridDivsArray =  [];
 
