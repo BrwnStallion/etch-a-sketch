@@ -65,6 +65,7 @@ function makeGridDiv(size) {
         gridDivsArray[i] = document.createElement('div');
     };
 
+
     const gridContainer = document.querySelector('#grid-group');
 
     // Remove any existing grid divs from previous grid
@@ -75,9 +76,20 @@ function makeGridDiv(size) {
         });
     };
 
-    // Append each newly created grid div to the parent container
+
+    // Grid Div dimension definition
+    let divDimension = '6.25%';
+
+    // Set attributes and append each newly created divs to the parent container
     gridDivsArray.forEach( (div) => {
+        // Set class
         div.classList.toggle('grid-div');
+        
+        // Set grid div size
+        div.setAttribute('style', `width: ${divDimension};
+            height: ${divDimension};`);
+        
+        // Append to parent
         gridContainer.appendChild(div);
     });
 }
