@@ -56,31 +56,76 @@ function makeTargetRandomColor(e) {
         ${blueCode}`;
 }
 
+function makeGridDiv(size) {
+    const gridDivsArray =  [];
+
+    for (let i = 0; i < size; i++) {
+        gridDivsArray[i] = document.createElement('div');
+    };
+
+    const gridContainer = document.querySelector('#grid-group');
+
+    const gridDivsOld = document.querySelectorAll('#grid-group div');
+        if (gridDivsOld.length > 0) {
+                gridDivsOld.forEach( (oldGridDiv) => {
+                    gridContainer.removeChild(oldGridDiv);
+            });
+        };
+
+    gridDivsArray.forEach( (div) => {
+        div.classList.toggle('grid-div');
+        gridContainer.appendChild(div);
+    });
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(function () {
-    const gridDivsArray =  [];
+// (function () {
+//     const gridDivsArray =  [];
 
-    for (let i = 0; i < 256; i++) {
-        gridDivsArray[i] = document.createElement('div');
-    };
+//     for (let i = 0; i < 256; i++) {
+//         gridDivsArray[i] = document.createElement('div');
+//     };
 
-    const gridContainer = document.querySelector('#grid-group');
-    gridDivsArray.forEach( (div) => {
-        div.classList.toggle('grid-div');
-        gridContainer.appendChild(div);
-    });
-})();
+//     const gridContainer = document.querySelector('#grid-group');
+//     gridDivsArray.forEach( (div) => {
+//         div.classList.toggle('grid-div');
+//         gridContainer.appendChild(div);
+//     });
+// })();
+
+makeGridDiv(256);
 
 
 addEventListener('load', () => {
     
     const gridInteraction = document.querySelector('#grid-group');
+    const newDimButton = document.querySelector('#header button');
 
     gridInteraction.addEventListener('mouseover', makeTargetRandomColor);
     gridInteraction.addEventListener('touchmove', makeTargetRandomColor);
+    newDimButton.addEventListener('click', () => {
+        
+        // While initialization value
+        let promptIncomplete = true;
+
+        while (promptIncomplete) {
+            let size = prompt('Enter new sketchpad dimension:');
+
+            if (size === null || size === '') {
+                promptIncomplete = false;
+            } else if (isNaN(size) || (+size < 1) || (+size > 100)) {
+                alert('Dimension must be a number between 1 and 100');
+            } else {
+                makeGridDiv((+size)**2);
+                promptIncomplete = false;
+            };
+
+        };
+        
+    });
 });
 
