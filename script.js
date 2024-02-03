@@ -83,20 +83,6 @@ function makeGridDiv(size) {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// (function () {
-//     const gridDivsArray =  [];
-
-//     for (let i = 0; i < 256; i++) {
-//         gridDivsArray[i] = document.createElement('div');
-//     };
-
-//     const gridContainer = document.querySelector('#grid-group');
-//     gridDivsArray.forEach( (div) => {
-//         div.classList.toggle('grid-div');
-//         gridContainer.appendChild(div);
-//     });
-// })();
-
 makeGridDiv(256);
 
 
