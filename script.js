@@ -59,19 +59,22 @@ function makeTargetRandomColor(e) {
 function makeGridDiv(size) {
     const gridDivsArray =  [];
 
+    // Fill out grid div array
     for (let i = 0; i < size; i++) {
         gridDivsArray[i] = document.createElement('div');
     };
 
     const gridContainer = document.querySelector('#grid-group');
 
+    // Remove any existing grid divs from previous grid
     const gridDivsOld = document.querySelectorAll('#grid-group div');
-        if (gridDivsOld.length > 0) {
-                gridDivsOld.forEach( (oldGridDiv) => {
-                    gridContainer.removeChild(oldGridDiv);
-            });
-        };
+    if (gridDivsOld.length > 0) {
+            gridDivsOld.forEach( (oldGridDiv) => {
+                gridContainer.removeChild(oldGridDiv);
+        });
+    };
 
+    // Append each newly created grid div to the parent container
     gridDivsArray.forEach( (div) => {
         div.classList.toggle('grid-div');
         gridContainer.appendChild(div);
