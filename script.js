@@ -58,6 +58,8 @@ function makeTargetRandomColor(e) {
 
 // Make and append grid divs
 function makeGridDiv(size) {
+    
+    
     const gridDivsArray =  [];
 
     // Fill out grid div array
@@ -77,7 +79,7 @@ function makeGridDiv(size) {
     };
 
 
-    // Grid Div dimension definition
+    // Grid Div dimension definition THIS IS WHAT I NEED TO WORK ON RIGHT NOW
     let divDimension = '6.25%';
 
     // Set attributes and append each newly created divs to the parent container
