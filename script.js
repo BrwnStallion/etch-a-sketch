@@ -167,11 +167,13 @@ function makeGridDiv(size) {
         // Append to parent
         gridContainer.appendChild(div);
     });
+
+    gridDivs = document.querySelectorAll('#grid-container .grid-div');
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+let gridDivs;
 makeGridDiv(16);
 
 
@@ -181,7 +183,7 @@ addEventListener('load', () => {
     const newDimButton = document.querySelector('#header button');
 
     gridInteraction.addEventListener('mouseover', makeTargetRandomColor);
-    gridInteraction.addEventListener('touchstart', makeTargetRandomColor);
+    // gridInteraction.addEventListener('touchstart', makeTargetRandomColor);
     newDimButton.addEventListener('click', () => {
         
         // While initialization value
@@ -202,6 +204,9 @@ addEventListener('load', () => {
 
         };
         
+    });
+    gridDivs.forEach( (gridDiv) => {
+        gridDiv.addEventListener('touchstart', makeTargetRandomColor);
     });
 
 });
