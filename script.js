@@ -124,6 +124,9 @@ function makeTargetRandomColor(e) {
 
     targetDiv.style.backgroundColor = `rgb(${redCode}, ${greenCode},
         ${blueCode}`;
+    
+    e.preventDefault();
+    
 }
 
 // Make and append grid divs
