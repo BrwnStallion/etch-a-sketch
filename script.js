@@ -49,10 +49,41 @@ function getRandomNumber(min, max) {
 
 // Make an element a random color
 function makeTargetRandomColor(e) {
+    
+    // Event target information
     const targetDiv = e.target;
-    // console.log(typeof targetDiv.style.backgroundColor);
-    let maxColor = 0;
-    let minColor = 255;
+
+    // RegEx for rgb numbers in the string
+    const regexRgb = /([0-9]+), ([0-9]+), ([0-9]+)/;
+
+    // Execute and store search in the event target's bgColor style (array)
+    const regexRgbResults = targetDiv.style.backgroundColor.match(regexRgb);
+    console.log(regexRgbResults);
+
+    const colorMinMax = [];
+    let redColorMin;
+    let redColorMax;
+    let greenColorMin;
+    let greenColorMax;
+    let blueColorMin;
+    let blueColorMax;
+    let minColor;
+    let maxColor;
+
+    if (regexRgbResults === null) {
+        minColor = 0;
+        maxColor = 255;
+    } else {
+        // Store rgb values as numbers
+        let initRed = +regexRgbResults[1];
+        let initGreen = +regexRgbResults[2];
+        let initBlue = +regexRgbResults[3];
+        console.log(initRed);
+        console.log(initGreen);
+        console.log(initBlue);
+    }
+    
+    
 
     let redCode = getRandomNumber(minColor, maxColor);
     let greenCode = getRandomNumber(minColor, maxColor);
