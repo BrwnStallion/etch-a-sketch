@@ -22,6 +22,12 @@
     // Color of the interacted square randomizes
         // JS to select a random rgb based off the range of possible values
         // Future objective: darken by 10% with every interaction
+// Darken a square by 10% with every interaction
+//      - Do this while still changing the color randomly with each interaction
+//      - Initial randomization doesn't need to be with color(s) @ 255
+//      - JS needs access to the previous color, and needs to take its greatest 
+//        value and use that (- 10%) as the limit for the next randomization
+//      - Initially, the divs have the gray which is set in CSS
 
 // Implement button that allows user to input a custom grid size
     // Use a prompt popup
@@ -30,7 +36,6 @@
         // Dispatch an event to trigger the grid logic instead of reusing it
     // Define width and height attribute on '#grid-group .grid-div' to be the
     // appropriate fraction.
-
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,6 +50,7 @@ function getRandomNumber(min, max) {
 // Make an element a random color
 function makeTargetRandomColor(e) {
     const targetDiv = e.target;
+    // console.log(typeof targetDiv.style.backgroundColor);
     let maxColor = 0;
     let minColor = 255;
 
@@ -132,6 +138,6 @@ addEventListener('load', () => {
         };
         
     });
-    
+
 });
 
