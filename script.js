@@ -56,41 +56,71 @@ function makeTargetRandomColor(e) {
     // Event target information
     const targetDiv = e.target;
 
-    // RegEx for rgb numbers in the string
+    // RegEx for rgb numbers in the div's old color info string
     const regexRgb = /([0-9]+), ([0-9]+), ([0-9]+)/;
 
-    // Execute and store search in the event target's bgColor style (array)
+    // Execute search and store div's old color info in results array
     const regexRgbResults = targetDiv.style.backgroundColor.match(regexRgb);
-    console.log(regexRgbResults);
 
-    const colorMinMax = [];
-    let redColorMin;
-    let redColorMax;
-    let greenColorMin;
-    let greenColorMax;
-    let blueColorMin;
-    let blueColorMax;
-    let minColor;
+    // Max is always unassociated to a specific color (rgb)
     let maxColor;
-
+    
+    // Create empty array in which the rgb colors will be placed
+    const rgbArray = [];
+    
+    
+    // Conditional to manage if it's the first color used, or has one already
     if (regexRgbResults === null) {
-        minColor = 0;
+
+        // maxColor is 255 if the bgColor hasn't been set yet via listener
         maxColor = 255;
+
     } else {
-        // Store rgb values as numbers
-        let initRed = +regexRgbResults[1];
-        let initGreen = +regexRgbResults[2];
-        let initBlue = +regexRgbResults[3];
-        console.log(initRed);
-        console.log(initGreen);
-        console.log(initBlue);
-    }
+
+        // Store previous rgb values as numbers
+        const oldColors = [];
+        oldColors[0] = +regexRgbResults[1];
+        oldColors[1] = +regexRgbResults[2];
+        oldColors[2] = +regexRgbResults[3];
+        
+        // Sort the oldColors array to get the max from the previous color
+        oldColors.sort(function(a,b){return b-a});  // use callback function
+        
+        // Define new maxColor as approx 10% darker than previous
+        maxColor = oldColors[0] - 26;
+
+        // Keep maxColor from going negative. Can't have negative rgb value
+        if (maxColor <= 0) maxColor = 0;
     
+    };
     
 
-    let redCode = getRandomNumber(minColor, maxColor);
-    let greenCode = getRandomNumber(minColor, maxColor);
-    let blueCode = getRandomNumber(minColor, maxColor);
+    // Get maxColor's location in the rgbArray
+    let maxColorLocation = getRandomNumber(0,2);
+
+    // Place maxColor at its randomly determined location
+    rgbArray[maxColorLocation] = maxColor;
+
+    // Place the other two colors based on where the maxColor went
+    switch (maxColorLocation) {
+        case 0:
+            rgbArray[1] = getRandomNumber(0, maxColor);
+            rgbArray[2] = getRandomNumber(0, maxColor);
+        break;
+        case 1:
+            rgbArray[0] = getRandomNumber(0, maxColor);
+            rgbArray[2] = getRandomNumber(0, maxColor);
+        break;
+        case 2:
+            rgbArray[0] = getRandomNumber(0, maxColor);
+            rgbArray[1] = getRandomNumber(0, maxColor);
+        break;
+    };
+
+
+    let redCode = rgbArray[0];
+    let greenCode = rgbArray[1];
+    let blueCode = rgbArray[2];
 
     targetDiv.style.backgroundColor = `rgb(${redCode}, ${greenCode},
         ${blueCode}`;
