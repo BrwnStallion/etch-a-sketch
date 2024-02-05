@@ -23,11 +23,14 @@
         // JS to select a random rgb based off the range of possible values
         // Future objective: darken by 10% with every interaction
 // Darken a square by 10% with every interaction
-//      - Do this while still changing the color randomly with each interaction
-//      - Initial randomization doesn't need to be with color(s) @ 255
-//      - JS needs access to the previous color, and needs to take its greatest 
-//        value and use that (- 10%) as the limit for the next randomization
-//      - Initially, the divs have the gray which is set in CSS
+//   - Do this while still changing the color randomly with each interaction
+//   - Initially, the divs have the gray which is set in CSS
+//   - Initial randomization will look best with color(s) @ 255
+//      - Place 255 with random color; other two are random w/in the range
+//   - JS needs access to the previous color, and needs to take its greatest 
+//     value and use that (- 10%) as the limit for the next randomization
+//      - This can be handled by subracting 26 from maximum value (10%)
+//          - Then the other two colors can be random within the new range
 
 // Implement button that allows user to input a custom grid size
     // Use a prompt popup
