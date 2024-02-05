@@ -80,7 +80,7 @@ function makeGridDiv(size) {
 
 
     // Grid Div dimension definition THIS IS WHAT I NEED TO WORK ON RIGHT NOW
-    let divDimension = '6.25%';
+    let divDimension = Math.floor(10000 / Math.sqrt)/100;
 
     // Set attributes and append each newly created divs to the parent container
     gridDivsArray.forEach( (div) => {
@@ -88,8 +88,8 @@ function makeGridDiv(size) {
         div.classList.toggle('grid-div');
         
         // Set grid div size
-        div.setAttribute('style', `width: ${divDimension};
-            height: ${divDimension};`);
+        div.setAttribute('style', `width: ${divDimension}%;
+            height: ${divDimension}%;`);
         
         // Append to parent
         gridContainer.appendChild(div);
@@ -101,7 +101,7 @@ function makeGridDiv(size) {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-makeGridDiv(256);
+makeGridDiv(16);
 
 
 addEventListener('load', () => {
@@ -124,7 +124,7 @@ addEventListener('load', () => {
             } else if (isNaN(size) || (+size < 1) || (+size > 100)) {
                 alert('Dimension must be a number between 1 and 100');
             } else {
-                makeGridDiv((+size)**2);
+                makeGridDiv((+size));
                 promptIncomplete = false;
             };
 
