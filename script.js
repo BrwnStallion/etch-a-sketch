@@ -79,7 +79,7 @@ function makeGridDiv(size) {
     };
 
 
-    // Grid Div dimension definition THIS IS WHAT I NEED TO WORK ON RIGHT NOW
+    // Grid Div dimension definition
     let divDimension = Math.floor(10000 / size) / 100;
 
     // Set attributes and append each newly created divs to the parent container
@@ -116,6 +116,7 @@ addEventListener('load', () => {
         // While initialization value
         let promptIncomplete = true;
 
+        // Verify that the new dimension input is valid
         while (promptIncomplete) {
             let size = prompt('Enter new sketchpad dimension:');
 
