@@ -59,11 +59,11 @@ function makeTargetRandomColor(e) {
 // Make and append grid divs
 function makeGridDiv(size) {
     
-    
+    let gridDivTotal = size ** 2;
     const gridDivsArray =  [];
 
     // Fill out grid div array
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < gridDivTotal; i++) {
         gridDivsArray[i] = document.createElement('div');
     };
 
@@ -80,7 +80,7 @@ function makeGridDiv(size) {
 
 
     // Grid Div dimension definition THIS IS WHAT I NEED TO WORK ON RIGHT NOW
-    let divDimension = Math.floor(10000 / Math.sqrt)/100;
+    let divDimension = Math.floor(10000 / size) / 100;
 
     // Set attributes and append each newly created divs to the parent container
     gridDivsArray.forEach( (div) => {
