@@ -68,7 +68,7 @@ function makeTargetRandomColor(e) {
     // Create empty array in which the rgb colors will be placed
     const rgbArray = [];
     
-    
+
     // Conditional to manage if it's the first color used, or has one already
     if (regexRgbResults === null) {
 
@@ -169,8 +169,6 @@ function makeGridDiv(size) {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 makeGridDiv(16);
 
 
@@ -205,3 +203,5 @@ addEventListener('load', () => {
 
 });
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
