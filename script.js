@@ -178,7 +178,7 @@ addEventListener('load', () => {
     const newDimButton = document.querySelector('#header button');
 
     gridInteraction.addEventListener('mouseover', makeTargetRandomColor);
-    gridInteraction.addEventListener('touchmove', makeTargetRandomColor);
+    gridInteraction.addEventListener('touchstart', makeTargetRandomColor);
     newDimButton.addEventListener('click', () => {
         
         // While initialization value
