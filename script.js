@@ -206,6 +206,7 @@ function makeGridGroupResize() {
 
 makeGridDiv(16);
 
+addEventListener('DOMContentLoaded', makeGridGroupResize);
 
 addEventListener('load', () => {
     
@@ -238,9 +239,6 @@ addEventListener('load', () => {
 
 });
 
+addEventListener('resize', makeGridGroupResize);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-addEventListener('DOMContentLoaded', makeGridGroupResize);
-
-addEventListener('resize', makeGridGroupResize);
