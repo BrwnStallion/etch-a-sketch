@@ -4,24 +4,25 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Pseudocode ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Create 16 x 16 grid of square divs
-    // Declare array const to store all grid div elements
-    // Create div elements cyclically
-        // Store each div element at the next position in the array const
-        // Add class attribute for each grid div
-        // Append the newly created div to grid container div
-    // OR: append the divs to the grid container div cyclically through the
-        // array
-        // This method may be preferred because we aren't creating and rewriting
-        // over the same variable as we append. This method allows for one array
-        // to be defined, and then we can append all of its members
-    // Can also add the class attribute by toggling the attribute for each/all
+//   - Declare array const to store all grid div elements
+//   - Create div elements cyclically
+//      - Store each div element at the next position in the array const
+//      - Add class attribute for each grid div
+//      - Append the newly created div to grid container div
+//   - OR: append the divs to the grid container div cyclically through the
+//     array
+//   - This method may be preferred because we aren't creating and rewriting
+//     over the same variable as we append. This method allows for one array
+//     to be defined, and then we can append all of its members
+//   - Can also add the class attrib. by toggling the attribute for each/all
     
 // Apply 'hover' effect to the grid divs
-    // When the mouse moves onto a square (can put the listener on the parent)
-        // Can apply attributes/styles to target element
-    // Color of the interacted square randomizes
-        // JS to select a random rgb based off the range of possible values
-        // Future objective: darken by 10% with every interaction
+//   - When the mouse moves onto a square (can put the listener on the parent)
+//   - Can apply attributes/styles to target element
+//   - Color of the interacted square randomizes
+//   - JS to select a random rgb based off the range of possible values
+//   - Future objective: darken by 10% with every interaction
+
 // Darken a square by 10% with every interaction
 //   - Do this while still changing the color randomly with each interaction
 //   - Initially, the divs have the gray which is set in CSS
@@ -30,22 +31,22 @@
 //   - JS needs access to the previous color, and needs to take its greatest 
 //     value and use that (- 10%) as the limit for the next randomization
 //      - This can be handled by subracting 26 from maximum value (10%)
-//          - Then the other two colors can be random within the new range
+//         - Then the other two colors can be random within the new range
 
 // Implement button that allows user to input a custom grid size
-    // Use a prompt popup
-        // Set the maximum to 100
-        // Account for null
-        // Dispatch an event to trigger the grid logic instead of reusing it
-    // Define width and height attribute on '#grid-group .grid-div' to be the
-    // appropriate fraction.
+//   - Use a prompt popup
+//      - Set the maximum to 100
+//      - Account for null
+//      - Dispatch an event to trigger the grid logic instead of reusing it
+//   - Define width and height attribute on '#grid-group .grid-div' to be the
+//     appropriate fraction.
 
 // Size the grid-group container to account for the header if the height is the
-//  restricting dimension
-//      - Can use window resize event handler
-//      - Can get window size from event information
-//      - Can do calculations from the window size to subtract the known dims of
-//          the header
+// restricting dimension
+//   - Can use window resize event handler
+//   - Can get window size from event information
+//   - Can do calculations from the window size to subtract the known dims of
+//     the header
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
