@@ -41,12 +41,13 @@
 //   - Define width and height attribute on '#grid-group .grid-div' to be the
 //     appropriate fraction.
 
-// Size the grid-group container to account for the header if the height is the
-// restricting dimension
+// Size the grid-group container to account for the header (if the height is the
+// restricting dimension)
 //   - Can use window resize event handler
 //   - Can get window size from event information
 //   - Can do calculations from the window size to subtract the known dims of
 //     the header
+//   - Can apply grid style dimensions using calculated dimensions
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
