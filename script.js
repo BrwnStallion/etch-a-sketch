@@ -178,6 +178,30 @@ function makeGridDiv(size) {
 
 }
 
+// Make #grid-group resize to be determined by smallest client dimension
+function makeGridGroupResize() {
+    
+    let gridDimension;
+    
+    // Determines grid dimension based on limiting client dimension
+    // Changes between height and width 50px early so scrollbar doesn't appear
+    if ( (document.documentElement.clientHeight - 50) <= 
+        document.documentElement.clientWidth) {
+        
+        // Height dimension removes 43px to account for page header
+        gridDimension = document.documentElement.clientHeight - 43;
+        
+    } else {
+        gridDimension = document.documentElement.clientWidth;
+    };
+    
+    // Grab #grid-group
+    const gridGroup = document.querySelector('#grid-group');
+    // Set it's dimension attributes to calculated dimension
+    gridGroup.setAttribute('style', `width: ${gridDimension}px;
+    height: ${gridDimension}px;`);
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Execution ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 makeGridDiv(16);
@@ -217,40 +241,6 @@ addEventListener('load', () => {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-addEventListener('DOMContentLoaded', () => {
-    let gridDimension;
+addEventListener('DOMContentLoaded', makeGridGroupResize);
 
-    if ( (document.documentElement.clientHeight - 50) <= 
-        document.documentElement.clientWidth) {
-        
-        gridDimension = document.documentElement.clientHeight - 43;
-        
-    } else {
-        
-        gridDimension = document.documentElement.clientWidth;
-    };
-
-    const gridGroup = document.querySelector('#grid-group');
-    gridGroup.setAttribute('style', `width: ${gridDimension}px;
-    height: ${gridDimension}px;`);
-});
-
-addEventListener('resize', () => {
-
-
-    let gridDimension;
-
-    if ( (document.documentElement.clientHeight - 50) <= 
-        document.documentElement.clientWidth) {
-        
-        gridDimension = document.documentElement.clientHeight - 43;
-
-    } else {
-        gridDimension = document.documentElement.clientWidth;
-    };
-
-    const gridGroup = document.querySelector('#grid-group');
-    gridGroup.setAttribute('style', `width: ${gridDimension}px;
-    height: ${gridDimension}px;`);
-
-});
+addEventListener('resize', makeGridGroupResize);
