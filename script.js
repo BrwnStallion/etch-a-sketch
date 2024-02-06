@@ -216,3 +216,41 @@ addEventListener('load', () => {
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+addEventListener('DOMContentLoaded', () => {
+    let gridDimension;
+
+    if ( (document.documentElement.clientHeight - 50) <= 
+        document.documentElement.clientWidth) {
+        
+        gridDimension = document.documentElement.clientHeight - 43;
+        
+    } else {
+        
+        gridDimension = document.documentElement.clientWidth;
+    };
+
+    const gridGroup = document.querySelector('#grid-group');
+    gridGroup.setAttribute('style', `width: ${gridDimension}px;
+    height: ${gridDimension}px;`);
+});
+
+addEventListener('resize', () => {
+
+
+    let gridDimension;
+
+    if ( (document.documentElement.clientHeight - 50) <= 
+        document.documentElement.clientWidth) {
+        
+        gridDimension = document.documentElement.clientHeight - 43;
+
+    } else {
+        gridDimension = document.documentElement.clientWidth;
+    };
+
+    const gridGroup = document.querySelector('#grid-group');
+    gridGroup.setAttribute('style', `width: ${gridDimension}px;
+    height: ${gridDimension}px;`);
+
+});
